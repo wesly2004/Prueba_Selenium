@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-11T21:25:47.131Z",
+    "end": "2025-04-11T21:26:41.021Z",
+    "duration": 53890,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d054ee4a-13a6-4e6a-9c85-909f899ff1a9",
+      "title": "",
+      "fullFile": "C:\\Users\\wesly\\OneDrive\\Escritorio\\45-login\\test-login-report.js",
+      "file": "\\test-login-report.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d1dcfd98-9eb5-45e0-b2a5-09361968646f",
+          "title": "Prueba de Login",
+          "fullFile": "C:\\Users\\wesly\\OneDrive\\Escritorio\\45-login\\test-login-report.js",
+          "file": "\\test-login-report.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Prueba de Login\"",
+              "fullTitle": "Prueba de Login \"before all\" hook in \"Prueba de Login\"",
+              "timedOut": false,
+              "duration": 22978,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();",
+              "err": {},
+              "uuid": "d5a3604b-6750-4a0e-ba61-68202fa2c2fb",
+              "parentUUID": "d1dcfd98-9eb5-45e0-b2a5-09361968646f",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Prueba de Login\"",
+              "fullTitle": "Prueba de Login \"after all\" hook in \"Prueba de Login\"",
+              "timedOut": false,
+              "duration": 26328,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "0689c02c-eac7-4383-b48e-92572a1c66c1",
+              "parentUUID": "d1dcfd98-9eb5-45e0-b2a5-09361968646f",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Debe iniciar sesión exitosamente con credenciales válidas",
+              "fullTitle": "Prueba de Login Debe iniciar sesión exitosamente con credenciales válidas",
+              "timedOut": false,
+              "duration": 4418,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('http://127.0.0.1:5500/index.html'); // Asegúrate de que esté corriendo\nawait driver.findElement(By.id('username')).sendKeys('admin');\nawait driver.findElement(By.id('password')).sendKeys('1234');\nawait driver.findElement(By.id('button')).click();\nlet mensaje = await driver.wait(until.elementLocated(By.id('mensaje-login')), 5000);\nlet texto = await mensaje.getText();\n// Captura de pantalla automática\nlet screenshot = await driver.takeScreenshot();\nfs.writeFileSync(path.join(__dirname, 'screenshots', 'login-exitoso.png'), screenshot, 'base64');\nassert.strictEqual(texto, '✅ Login exitoso');",
+              "err": {},
+              "uuid": "bf23c744-7089-4ffc-873c-36fdf33ad45d",
+              "parentUUID": "d1dcfd98-9eb5-45e0-b2a5-09361968646f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bf23c744-7089-4ffc-873c-36fdf33ad45d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4418,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

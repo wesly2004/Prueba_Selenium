@@ -1,0 +1,21 @@
+{
+  "name": "45-login",
+  "version": "1.0.0",
+  "description": "Proyecto de prueba automatizada de login con Selenium",
+  "main": "main.js",
+   "scripts": {
+  "test": "mocha test-login-report.js --reporter mochawesome"
+  },
+
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^135.0.1",
+    "mocha": "^11.1.0",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.31.0"
+  }
+}
+
